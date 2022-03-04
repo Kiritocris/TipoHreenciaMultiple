@@ -9,6 +9,7 @@ private:
 
 public:
 	Empleado(string, int, double,string);
+	Empleado(double, string);
 	Empleado();
 	double GetSueldo();
 	string GetCargo();
@@ -21,8 +22,11 @@ Empleado::Empleado(string Nombre, int Edad, double Sueldo,string Cargo) :Persona
 	this->Cargo = Cargo;
 
 }
-Empleado::Empleado(){
-
+Empleado::Empleado(double Sueldo, string Cargo) {
+	this->Sueldo = Sueldo;
+	this->Cargo= Cargo;
+}
+Empleado::Empleado() {
 }
 double Empleado::GetSueldo()
 {

@@ -1,13 +1,14 @@
 #pragma once
 #include "Universitario.h"
 #include "Empleado.h"
- 
+
+
 class Pasante :public Universitario, public Empleado {
 private:
 	string proyecto;
 	int totalhrs{}, hrscom{};
 public:
-	/*Pasante(string, int, int, string, double, string, string, string[Nm], int[Nm], double, string, string, int, int );*/
+	Pasante(string, int, int, string, double, string, string, string[Nm], int[Nm], double, string, string, int, int);
 	Pasante();
 	int hrst();
 	int hrsc();
@@ -17,13 +18,12 @@ public:
 
 };
 
-//Pasante::Pasante(string nombre, int edad,int matricula, string gradoestudio, double notafinal, string universidad, string carrera, string materias[Nm], int notas[Nm], double sueldo, string cargo, string proyecto,int totalhrs, int hrscom)
-//	:universitario(Nombre,edad,matricula,gradoestudio,notafinal,universidad,carrera,materias[Nm], notas[Nm]),
-//	empleado(nombre,edad,sueldo,cargo){
-//	this->proyecto = proyecto;
-//	this->totalhrs = totalhrs;
-//	this->hrscom = hrscom;
-//}
+Pasante::Pasante(string Nombre, int Edad, int Matricula, string gradoEstudio, double NotaFinal, string Universidad, string Carrera, string Materias[Nm], int notas[Nm], double Sueldo, string Cargo,string proyecto, int totalhrs, int hrscom)
+	:Universitario(Nombre,Edad,Matricula,gradoEstudio,NotaFinal,Universidad,Carrera,Materias, notas), Empleado(Sueldo, Cargo) {
+	this->proyecto = proyecto;
+	this->totalhrs = totalhrs;
+	this->hrscom = hrscom;
+}
 
 Pasante::Pasante(){
 
@@ -67,7 +67,4 @@ void Pasante::getAllData() {
 	cout << "Cargo asignado:" << Empleado::GetCargo() << endl;
 	cout << "Horas asignadas:" << totalhrs << endl;
 	cout << "Horas completadas:" << hrscom << endl;
-	
-
-
 }

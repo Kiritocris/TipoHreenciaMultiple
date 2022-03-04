@@ -2,14 +2,21 @@
 #include "Pasante.h"
 using namespace std;
 
-void setpasante();
+Pasante setPasante();
+
+//Declarar un constructor con solo los atributos que necesites y despues meterlo al constructor del Universitario nota para hacer el proyecto
+
 
 int main() {
 
-	Pasante P2;
-	P2.setDatos();
-	P2.getAllData();
+	Pasante Pasante1;
+	Pasante1 = setPasante();
+	Pasante1.getAllData();
 
+	Pasante P2;
+	P2.allDatos();
+	P2.getAllData();
+	system("cls");
 	/*int opc=0;
 	
 	do {
@@ -46,9 +53,61 @@ int main() {
 	return 0;
 }
 
-//void setpasante() {
-//	Pasante Pn;
-//	Pn.setDatos();
-//
-//};
+Pasante setPasante() {
+	string Nombre, gradoEstudio, Universidad, Carrera, Materias[Nm], Cargo, proyecto;
+	int Edad, Matricula, totalhrs, hrscom, notas[Nm];
+	double NotaFinal, Sueldo;
+	cout << "Escriba su <nombre>:";
+	getline(cin, Nombre);
+	cout << "Escriba su <Grado de estudios>:";
+	getline(cin, gradoEstudio);
+	cout << "Escriba su <Universidad>:";
+	getline(cin, Universidad);
+	cout << "Escriba su <Carrera>:";
+	getline(cin, Carrera);
+	cout << "Escriba su <Materias>:";
+	getline(cin, Materias[0]);
+	cout << "Escriba su <Materias>:";
+	getline(cin, Materias[1]);
+	cout << "Escriba su <Materias>:";
+	getline(cin, Materias[2]);
+	cout << "Escriba su <Materias>:";
+	getline(cin, Materias[3]);
+	cout << "Escriba su <Materias>:";
+	getline(cin, Materias[4]);
+	cout << "Escriba su <Cargo>:";
+	getline(cin, Cargo);
+	cout << "Escriba su <Proyecto nombre>:";
+	getline(cin, proyecto);
+	cout << "Digite su <Edad>:";
+	cin >> Edad;
+	cout << "Digite su <Matricula>:";
+	cin >> Matricula;
+	cout << "Digite su <Total de horas>:";
+	cin >> totalhrs;
+	cout << "Digite su <Horas completadas>:";
+	cin >> hrscom;
+	cout << "Digite su <Horas completadas>:";
+	cin >> NotaFinal;
+	cout << "Digite su <Horas completadas>:";
+	cin >> Sueldo;
+	cout << "Digite su <Notas>:";
+	cin >> notas[0];
+	cout << "Digite su <Notas>:";
+	cin >> notas[1];
+	cout << "Digite su <Notas>:";
+	cin >> notas[2];
+	cout << "Digite su <Notas>:";
+	cin >> notas[3];
+	cout << "Digite su <Notas>:";
+	cin >> notas[4];
+
+	Pasante p1(Nombre,Edad,Matricula,gradoEstudio,NotaFinal,Universidad,Carrera,Materias, notas, Sueldo, Cargo, proyecto, totalhrs, hrscom);
+
+	/*Pasante Pn;
+	Pn.setDatos();*/
+
+	return p1;
+
+};
 

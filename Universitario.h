@@ -20,8 +20,16 @@ Universitario::Universitario(string Nombre, int Edad, int Matricula, string grad
 	:Estudiante( Nombre,  Edad,  Matricula,  gradoEstudio, NotaFinal){
 	this->Universidad = Universidad;
 	this->Carrera = Carrera;
-	this->Materias[Nm-1] = Materias[Nm-1];
-	this->notas[Nm-1] = notas[Nm-1];
+	this->Materias[0] = Materias[0];
+	this->Materias[1] = Materias[1];
+	this->Materias[2] = Materias[2];
+	this->Materias[3] = Materias[3];
+	this->Materias[4] = Materias[4];
+	this->notas[0] = notas[0];
+	this->notas[1] = notas[1];
+	this->notas[2] = notas[2];
+	this->notas[3] = notas[3];
+	this->notas[4] = notas[4];
 }
 
 Universitario::Universitario(){
