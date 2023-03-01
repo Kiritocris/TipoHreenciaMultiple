@@ -1,51 +1,43 @@
 #pragma once
 #include "Persona.h"
+#include <string>
+using namespace std;
 
 class Estudiante : public Persona
 {
 private:
-	int Matricula{};
-	string gradoEstudio;
-	double NotaFinal{};
+	int numeroCarnet{};
+	string nivelEstudios;
 
 public:
-	Estudiante(string, int, int, string, double);
+	Estudiante(string, int, int, string);
 	Estudiante();
-	int GetMatricula();
-	string GetEstudio();
-	double GetNota();
+	int GetCarnet();
+	string GetNivelEstudio();
 	void setEstudiante();
 };
 
-Estudiante::Estudiante(string Nombre, int Edad,int Matricula,string gradoEstudio, double NotaFinal) : Persona(Nombre, Edad)
+Estudiante::Estudiante(string Nombre, int Edad,int numeroCarnet,string nivelEstudios) : Persona(Nombre, Edad)
 {
-
-	this->Matricula = Matricula;
-	this->gradoEstudio = gradoEstudio;
-	this->NotaFinal = NotaFinal;
+	this->numeroCarnet= numeroCarnet;
+	this->nivelEstudios= nivelEstudios;
 }
 Estudiante::Estudiante() {
 
 }
 
-int Estudiante::GetMatricula() {
-	return Matricula;
+int Estudiante::GetCarnet() {
+	return numeroCarnet;
 }
-string Estudiante::GetEstudio() {
-	return gradoEstudio;
+string Estudiante::GetNivelEstudio() {
+	return nivelEstudios;
 }
 
-double Estudiante::GetNota()
-{
-	return NotaFinal;
-}
 
 void Estudiante::setEstudiante() {
 	cout << "Digite su matricula: ";
-	cin >> Matricula;
+	cin >> numeroCarnet;
 	cin.ignore();
 	cout << endl << "Escriba su grado de estudios: ";
-	getline(cin, gradoEstudio);
-	cout << endl << "Digite su calificacion final: ";
-	cin >> NotaFinal;
+	getline(cin, nivelEstudios);
 }

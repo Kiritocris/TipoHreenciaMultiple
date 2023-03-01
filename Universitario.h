@@ -9,15 +9,16 @@ private:
 	int notas[Nm]{};
 
 public:
-	Universitario(string, int, int, string, double, string,string,string[Nm], int[Nm]);
+	Universitario(string, int, int, string, string,string,string[Nm], int[Nm]);
 	Universitario();
 	string GetUniversidad();
 	string GetCarrera();
 	void impriMat();
 	void setUniv();
+	int materias();
 };
-Universitario::Universitario(string Nombre, int Edad, int Matricula, string gradoEstudio, double NotaFinal, string Universidad, string Carrera, string Materias[Nm], int notas[Nm])
-	:Estudiante( Nombre,  Edad,  Matricula,  gradoEstudio, NotaFinal){
+Universitario::Universitario(string Nombre, int Edad, int numeroCarnet, string nivelEstudios, string Universidad, string Carrera, string Materias[Nm], int notas[Nm])
+	:Estudiante( Nombre,  Edad, numeroCarnet, nivelEstudios){
 	this->Universidad = Universidad;
 	this->Carrera = Carrera;
 	this->Materias[0] = Materias[0];
@@ -67,4 +68,8 @@ void Universitario::impriMat(){
 	for (int i = 0; i < Nm; i++) {
 		cout << Materias[i] << "	" << notas[i] << endl;
 	}
+}
+
+int Universitario::materias() {
+	return (notas[0] + notas[1] + notas[2] + notas[3] + notas[4]);
 }
